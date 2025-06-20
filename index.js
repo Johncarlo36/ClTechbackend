@@ -44,6 +44,11 @@ app.use('/courses', courseRoutes);        // All /courses endpoints handled in r
 app.use('/enrollments', enrollmentRoutes); // All /enrollments endpoints handled in routes/enrollment.js
 app.use('/news', newsRoutes);             // All /news endpoints handled in routes/news.js
 
+// [SECTION] Root Route
+app.get('/', (req, res) => {
+  res.send('✅ Course Booking API is running...');
+});
+
 // [SECTION] Start Server
 const PORT = process.env.PORT || 4000;     // Use port from environment or default to 4000
 if (require.main === module) {
